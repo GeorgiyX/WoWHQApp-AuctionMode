@@ -1,0 +1,596 @@
+<resources>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="app_name">WoWHQ</string>
+    <string name="menu_top_bilds">Top\nсборки\nталантов</string>
+    <string name="menu_exit">Выход</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_wowtoken">WoWToken</string>
+    <string name="menu_character_profiles">Просмотр персонажей</string>
+    <string name="menu_talant_calc">Калькулятор талантов</string>
+    <string name="menu_auc">Аукцион</string>
+    <string name="menu_auc_tracking">Ваши предметы</string>
+    <string name="menu_auc_best">Сделки</string>
+    <string name="setting_title">Настройки</string>
+    <string name="setting_server">Имя сервера</string>
+    <string name="setting_lang">Язык</string>
+    <string name="setting_region">Регион</string>
+    <string name="talents_a_bar_title_text">Таланты</string>
+    <string name="set_this_text_from_resource">Set this text from resource</string>
+    <string name="talents_button_reset_text">Сбросить выбор</string>
+    <string name="auctions_title">Аукционы</string>
+    <string-array name="langs">
+        <item>ru</item>
+        <item>en</item>
+        <item>de</item>
+        <item>fr</item>
+    </string-array>
+    <string-array name="regions">
+        <item>us</item>
+        <item>eu</item>
+    </string-array>
+    <string-array name="auction_title">
+        <item>Сделки</item>
+        <item>Аукцион</item>
+        <item>Настрока фильтра</item>
+    </string-array>
+    <string-array name="slugs_us">
+        <item>earthen-ring</item>
+        <item>icecrown</item>
+        <item>hellscream</item>
+        <item>hyjal</item>
+        <item>frostwolf</item>
+        <item>lightbringer</item>
+        <item>blackrock</item>
+        <item>doomhammer</item>
+        <item>silver-hand</item>
+        <item>tichondrius</item>
+        <item>kelthuzad</item>
+        <item>alleria</item>
+        <item>eitrigg</item>
+        <item>whisperwind</item>
+        <item>garona</item>
+        <item>illidan</item>
+        <item>archimonde</item>
+        <item>khadgar</item>
+        <item>zuljin</item>
+        <item>stormrage</item>
+        <item>stormreaver</item>
+        <item>medivh</item>
+        <item>malganis</item>
+        <item>shattered-hand</item>
+        <item>arthas</item>
+        <item>lothar</item>
+        <item>elune</item>
+        <item>dalaran</item>
+        <item>spinebreaker</item>
+        <item>crushridge</item>
+        <item>feathermoon</item>
+        <item>bloodscalp</item>
+        <item>perenolde</item>
+        <item>wildhammer</item>
+        <item>baelgun</item>
+        <item>steamwheedle-cartel</item>
+        <item>norgannon</item>
+        <item>fenris</item>
+        <item>borean-tundra</item>
+        <item>zangarmarsh</item>
+        <item>draenor</item>
+        <item>moon-guard</item>
+        <item>destromath</item>
+        <item>bonechewer</item>
+        <item>dragonmaw</item>
+        <item>shadowsong</item>
+        <item>gilneas</item>
+        <item>eonar</item>
+        <item>kargath</item>
+        <item>daggerspine</item>
+        <item>aggramar</item>
+        <item>dragonblight</item>
+        <item>moonrunner</item>
+        <item>greymane</item>
+        <item>guldan</item>
+        <item>agamaggan</item>
+        <item>nazjatar</item>
+        <item>korgath</item>
+        <item>thorium-brotherhood</item>
+        <item>ysondre</item>
+        <item>altar-of-storms</item>
+        <item>onyxia</item>
+        <item>sentinels</item>
+        <item>anvilmar</item>
+        <item>arygos</item>
+        <item>vashj</item>
+        <item>nordrassil</item>
+        <item>tortheldrin</item>
+        <item>drenden</item>
+        <item>blood-furnace</item>
+        <item>shattered-halls</item>
+        <item>ragnaros</item>
+        <item>fizzcrank</item>
+        <item>nemesis</item>
+        <item>ghostlands</item>
+        <item>thaurissan</item>
+        <item>jubeithos</item>
+        <item>nagrand</item>
+        <item>the-scryers</item>
+        <item>nathrezim</item>
+        <item>burning-blade</item>
+        <item>terenas</item>
+        <item>thunderhorn</item>
+        <item>suramar</item>
+        <item>shadow-council</item>
+        <item>emerald-dream</item>
+        <item>azshara</item>
+        <item>ravencrest</item>
+        <item>draka</item>
+        <item>akama</item>
+        <item>kul-tiras</item>
+        <item>rexxar</item>
+        <item>arathor</item>
+        <item>muradin</item>
+        <item>haomarush</item>
+        <item>thrall</item>
+        <item>dentarg</item>
+        <item>black-dragonflight</item>
+        <item>demon-soul</item>
+        <item>aerie-peak</item>
+        <item>undermine</item>
+        <item>korialstrasz</item>
+        <item>anubarak</item>
+        <item>misha</item>
+        <item>bladefist</item>
+        <item>rivendare</item>
+        <item>hydraxis</item>
+        <item>shandris</item>
+        <item>farstriders</item>
+        <item>wyrmrest-accord</item>
+        <item>auchindoun</item>
+        <item>coilfang</item>
+        <item>the-underbog</item>
+        <item>terokkar</item>
+        <item>caelestrasz</item>
+        <item>amanthul</item>
+        <item>gundrak</item>
+        <item>duskwood</item>
+        <item>turalyon</item>
+        <item>azralon</item>
+        <item>malygos</item>
+        <item>khazgoroth</item>
+        <item>queldorei</item>
+        <item>drakkari</item>
+        <item>eredar</item>
+        <item>gorefiend</item>
+        <item>thunderlord</item>
+        <item>dunemaul</item>
+        <item>stonemaul</item>
+        <item>darkspear</item>
+        <item>spirestone</item>
+        <item>smolderthorn</item>
+        <item>runetotem</item>
+        <item>skywall</item>
+        <item>kalecgos</item>
+        <item>ursin</item>
+        <item>maelstrom</item>
+        <item>twisting-nether</item>
+        <item>balnazzar</item>
+        <item>malfurion</item>
+        <item>drakthul</item>
+        <item>mugthol</item>
+        <item>khaz-modan</item>
+        <item>trollbane</item>
+        <item>madoran</item>
+        <item>zuluhed</item>
+        <item>ysera</item>
+        <item>uldaman</item>
+        <item>alterac-mountains</item>
+        <item>shuhalo</item>
+        <item>ravenholdt</item>
+        <item>nesingwary</item>
+        <item>area-52</item>
+        <item>frostmourne</item>
+        <item>saurfang</item>
+        <item>silvermoon</item>
+        <item>echo-isles</item>
+        <item>senjin</item>
+        <item>cenarion-circle</item>
+        <item>llane</item>
+        <item>laughing-skull</item>
+        <item>burning-legion</item>
+        <item>stormscale</item>
+        <item>boulderfist</item>
+        <item>uldum</item>
+        <item>eldrethalas</item>
+        <item>firetree</item>
+        <item>gurubashi</item>
+        <item>detheroc</item>
+        <item>dark-iron</item>
+        <item>staghelm</item>
+        <item>kaelthas</item>
+        <item>lightninghoof</item>
+        <item>kirin-tor</item>
+        <item>garithos</item>
+        <item>anetheron</item>
+        <item>gnomeregan</item>
+        <item>jaedenar</item>
+        <item>blackwing-lair</item>
+        <item>darrowmere</item>
+        <item>blackwater-raiders</item>
+        <item>sisters-of-elune</item>
+        <item>draktharon</item>
+        <item>antonidas</item>
+        <item>cairne</item>
+        <item>azuremyst</item>
+        <item>quelthalas</item>
+        <item>exodar</item>
+        <item>blades-edge</item>
+        <item>velen</item>
+        <item>dawnbringer</item>
+        <item>goldrinn</item>
+        <item>tol-barad</item>
+        <item>gallywix</item>
+        <item>barthilas</item>
+        <item>shadowmoon</item>
+        <item>frostmane</item>
+        <item>chogall</item>
+        <item>alexstrasza</item>
+        <item>aegwynn</item>
+        <item>malorne</item>
+        <item>hakkar</item>
+        <item>veknilash</item>
+        <item>andorhal</item>
+        <item>executus</item>
+        <item>the-venture-co</item>
+        <item>tanaris</item>
+        <item>maiev</item>
+        <item>nazgrel</item>
+        <item>garrosh</item>
+        <item>galakrond</item>
+        <item>grizzly-hills</item>
+        <item>dreadmaul</item>
+        <item>scarlet-crusade</item>
+        <item>bloodhoof</item>
+        <item>dathremar</item>
+        <item>proudmoore</item>
+        <item>cenarius</item>
+        <item>kilrogg</item>
+        <item>nerzhul</item>
+        <item>uther</item>
+        <item>deathwing</item>
+        <item>kiljaeden</item>
+        <item>blackhand</item>
+        <item>durotan</item>
+        <item>bleeding-hollow</item>
+        <item>warsong</item>
+        <item>mannoroth</item>
+        <item>skullcrusher</item>
+        <item>azgalor</item>
+        <item>dethecus</item>
+        <item>gorgonnash</item>
+        <item>sargeras</item>
+        <item>lightnings-blade</item>
+        <item>azjolnerub</item>
+        <item>chromaggus</item>
+        <item>winterhoof</item>
+        <item>windrunner</item>
+        <item>argent-dawn</item>
+        <item>magtheridon</item>
+        <item>bronzebeard</item>
+        <item>the-forgotten-coast</item>
+        <item>scilla</item>
+        <item>dalvengyr</item>
+        <item>moknathal</item>
+        <item>lethon</item>
+    </string-array>
+    <string-array name="slugs_eu">
+        <item>zuljin</item>
+        <item>bloodhoof</item>
+        <item>arathor</item>
+        <item>garona</item>
+        <item>emerald-dream</item>
+        <item>azjolnerub</item>
+        <item>dragonblight</item>
+        <item>draenor</item>
+        <item>aszune</item>
+        <item>aggramar</item>
+        <item>elune</item>
+        <item>doomhammer</item>
+        <item>sunstrider</item>
+        <item>alakir</item>
+        <item>dunemaul</item>
+        <item>hyjal</item>
+        <item>kaelthas</item>
+        <item>thunderhorn</item>
+        <item>blackhand</item>
+        <item>frostmourne</item>
+        <item>gorgonnash</item>
+        <item>mannoroth</item>
+        <item>proudmoore</item>
+        <item>nefarian</item>
+        <item>nerathor</item>
+        <item>kragjin</item>
+        <item>quelthalas</item>
+        <item>drekthar</item>
+        <item>chromaggus</item>
+        <item>talnivarr</item>
+        <item>ahnqiraj</item>
+        <item>uldaman</item>
+        <item>der-mithrilorden</item>
+        <item>darkmoon-faire</item>
+        <item>bloodscalp</item>
+        <item>deathwing</item>
+        <item>durotan</item>
+        <item>dalaran</item>
+        <item>nerzhul</item>
+        <item>silvermoon</item>
+        <item>shattered-hand</item>
+        <item>skullcrusher</item>
+        <item>baelgun</item>
+        <item>gilneas</item>
+        <item>kargath</item>
+        <item>arthas</item>
+        <item>kiljaeden</item>
+        <item>dun-morogh</item>
+        <item>nathrezim</item>
+        <item>onyxia</item>
+        <item>hellscream</item>
+        <item>nordrassil</item>
+        <item>neptulon</item>
+        <item>frostwhisper</item>
+        <item>darksorrow</item>
+        <item>defias-brotherhood</item>
+        <item>korgall</item>
+        <item>les-sentinelles</item>
+        <item>kul-tiras</item>
+        <item>la-croisade-écarlate</item>
+        <item>mazrigos</item>
+        <item>scarshield-legion</item>
+        <item>steamwheedle-cartel</item>
+        <item>die-arguswacht</item>
+        <item>boulderfist</item>
+        <item>frostmane</item>
+        <item>jaedenar</item>
+        <item>eonar</item>
+        <item>saurfang</item>
+        <item>mugthol</item>
+        <item>nemesis</item>
+        <item>rajaxx</item>
+        <item>ulduar</item>
+        <item>ambossar</item>
+        <item>kazzak</item>
+        <item>varimathras</item>
+        <item>khadgar</item>
+        <item>medivh</item>
+        <item>zenedar</item>
+        <item>voljin</item>
+        <item>agamaggan</item>
+        <item>crushridge</item>
+        <item>burning-blade</item>
+        <item>daggerspine</item>
+        <item>argent-dawn</item>
+        <item>kirin-tor</item>
+        <item>archimonde</item>
+        <item>chogall</item>
+        <item>shadowsong</item>
+        <item>stormreaver</item>
+        <item>antonidas</item>
+        <item>nozdormu</item>
+        <item>perenolde</item>
+        <item>aegwynn</item>
+        <item>malganis</item>
+        <item>kelthuzad</item>
+        <item>theradras</item>
+        <item>balnazzar</item>
+        <item>wrathbringer</item>
+        <item>kult-der-verdammten</item>
+        <item>laughing-skull</item>
+        <item>der-rat-von-dalaran</item>
+        <item>bloodfeather</item>
+        <item>ragnaros</item>
+        <item>lightnings-blade</item>
+        <item>moonglade</item>
+        <item>emeriss</item>
+        <item>ysera</item>
+        <item>drakthul</item>
+        <item>eitrigg</item>
+        <item>outland</item>
+        <item>kilrogg</item>
+        <item>aerie-peak</item>
+        <item>dalvengyr</item>
+        <item>veklor</item>
+        <item>dentarg</item>
+        <item>terenas</item>
+        <item>dethecus</item>
+        <item>sinstralis</item>
+        <item>dragonmaw</item>
+        <item>illidan</item>
+        <item>sargeras</item>
+        <item>turalyon</item>
+        <item>spinebreaker</item>
+        <item>ravencrest</item>
+        <item>khazgoroth</item>
+        <item>alleria</item>
+        <item>lothar</item>
+        <item>madmortem</item>
+        <item>malfurion</item>
+        <item>die-silberne-hand</item>
+        <item>zuluhed</item>
+        <item>destromath</item>
+        <item>azshara</item>
+        <item>eredar</item>
+        <item>blackrock</item>
+        <item>frostwolf</item>
+        <item>blackmoore</item>
+        <item>zirkel-des-cenarius</item>
+        <item>guldan</item>
+        <item>senjin</item>
+        <item>thrall</item>
+        <item>amanthul</item>
+        <item>genjuros</item>
+        <item>anubarak</item>
+        <item>das-syndikat</item>
+        <item>terrordar</item>
+        <item>magtheridon</item>
+        <item>vashj</item>
+        <item>sylvanas</item>
+        <item>xavius</item>
+        <item>conseil-des-ombres</item>
+        <item>executus</item>
+        <item>nazjatar</item>
+        <item>confrérie-du-thorium</item>
+        <item>malorne</item>
+        <item>pozzo-delleternita</item>
+        <item>tarren-mill</item>
+        <item>suramar</item>
+        <item>the-venture-co</item>
+        <item>rashgarroth</item>
+        <item>hakkar</item>
+        <item>bronzebeard</item>
+        <item>trollbane</item>
+        <item>malygos</item>
+        <item>rexxar</item>
+        <item>anetheron</item>
+        <item>die-todeskrallen</item>
+        <item>die-ewige-wacht</item>
+        <item>tichondrius</item>
+        <item>veknilash</item>
+        <item>chamber-of-aspects</item>
+        <item>ravenholdt</item>
+        <item>wildhammer</item>
+        <item>taerar</item>
+        <item>tirion</item>
+        <item>der-abyssische-rat</item>
+        <item>ysondre</item>
+        <item>dun-modr</item>
+        <item>arathi</item>
+        <item>sanguino</item>
+        <item>minahonda</item>
+        <item>shendralar</item>
+        <item>exodar</item>
+        <item>uldum</item>
+        <item>los-errantes</item>
+        <item>darkspear</item>
+        <item>alonsus</item>
+        <item>burning-steppes</item>
+        <item>ungoro</item>
+        <item>anachronos</item>
+        <item>bronze-dragonflight</item>
+        <item>garrosh</item>
+        <item>norgannon</item>
+        <item>hellfire</item>
+        <item>booty-bay</item>
+        <item>ghostlands</item>
+        <item>stormrage</item>
+        <item>tyrande</item>
+        <item>cthun</item>
+        <item>lightbringer</item>
+        <item>colinas-pardas</item>
+        <item>teldrassil</item>
+        <item>area-52</item>
+        <item>arygos</item>
+        <item>todeswache</item>
+        <item>azuremyst</item>
+        <item>terokkar</item>
+        <item>nagrand</item>
+        <item>the-shatar</item>
+        <item>deathguard</item>
+        <item>auchindoun</item>
+        <item>lich-king</item>
+        <item>gordunni</item>
+        <item>soulflayer</item>
+        <item>nethersturm</item>
+        <item>shattrath</item>
+        <item>echsenkessel</item>
+        <item>greymane</item>
+        <item>deepholm</item>
+        <item>howling-fjord</item>
+        <item>festung-der-stürme</item>
+        <item>blutkessel</item>
+        <item>chants-éternels</item>
+        <item>die-aldor</item>
+        <item>das-konsortium</item>
+        <item>temple-noir</item>
+        <item>fordragon</item>
+        <item>ashenvale</item>
+        <item>borean-tundra</item>
+        <item>les-clairvoyants</item>
+        <item>blackscar</item>
+        <item>grom</item>
+        <item>grim-batol</item>
+        <item>aggra-portugues</item>
+        <item>galakrond</item>
+        <item>burning-legion</item>
+        <item>alexstrasza</item>
+        <item>haomarush</item>
+        <item>throkferoth</item>
+        <item>eldrethalas</item>
+        <item>blades-edge</item>
+        <item>karazhan</item>
+        <item>sporeggar</item>
+        <item>razuvious</item>
+        <item>marécage-de-zangar</item>
+        <item>azuregos</item>
+        <item>naxxramas</item>
+        <item>thermaplugg</item>
+        <item>goldrinn</item>
+        <item>culte-de-la-rive-noire</item>
+        <item>khaz-modan</item>
+        <item>bladefist</item>
+        <item>runetotem</item>
+        <item>twisting-nether</item>
+        <item>krasus</item>
+        <item>eversong</item>
+        <item>stormscale</item>
+        <item>arakarahm</item>
+        <item>twilights-hammer</item>
+        <item>the-maelstrom</item>
+        <item>shattered-halls</item>
+        <item>earthen-ring</item>
+        <item>forscherliga</item>
+        <item>die-nachtwache</item>
+        <item>lordaeron</item>
+        <item>deathweaver</item>
+    </string-array>
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="token_title">Текущая цена</string>
+    <string name="token_current">Текущая цена: %s</string>
+    <string name="token_max">Max: %s</string>
+    <string name="token_min">Min: %s</string>
+    <string name="token_start">Оповестить, если цена..</string>
+    <string name="token_change">Изменения: %s</string>
+    <string name="token_rbtn_low">..меньше:</string>
+    <string name="token_rbtn_high">..больше:</string>
+    <string name="token_input_error">Проверьте правильность ввода ;)</string>
+    <string name="token_notification_title">WoWToken:обновление.</string>
+    <string name="token_notification_text">Йуху! Токен превзошел ваши ожидания: </string>
+    <string name="talents_button_back">Назад</string>
+    <string name="token_appbar_title">WoWToken</string>
+    <string name="auctions_load_aucs_btn">Обновить</string>
+    <string name="auctions_connect_error">Ошибка при загрузке данных. \n Возможно, недоступно интернет подключение\n или на сервере ведутся работы.\nЛибо Вы выбрали испанский язык в настройках. \n:)</string>
+    <string name="menu_home">Home</string>
+    <string name="nav_header_text">WoWHQ</string>
+    <string name="auctions_menu_title_filter">Фильтр лотов</string>
+    <string name="filter_btn_apply">Применить</string>
+    <string name="filter_btn_reset">Сбросить</string>
+    <string name="filter_header_item_level_start">1</string>
+    <string name="filter_header_item_level_end">∞</string>
+    <string name="filter_header_item_level_text_view">Диапазон уровней:</string>
+    <string name="filter_header_item_price_text_view">Диапазон цен:</string>
+    <string name="filter_header_item_price_start">1</string>
+    <string name="filter_header_item_price_end">∞</string>
+    <string name="filter_header_order_by">Сортировать по:</string>
+    <string name="filter_input_error">Проверьте правильность ввода</string>
+
+
+    <string-array name="filter_header_order_by_spinner">
+        <item>Возрастанию цены</item>
+        <item>Убыванию цены</item>
+        <item>Возрастанию уровня</item>
+        <item>Убыванию уровня</item>
+    </string-array>
+</resources>

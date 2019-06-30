@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/fragment_talents_wow_spec_elem_img"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:contentDescription="TODO"
+        android:maxWidth="7dp"
+        android:maxHeight="7dp"
+        tools:background="@drawable/ic_launcher_background"
+        tools:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="sdsds"
+        android:id="@+id/fragment_talents_wow_spec_elem_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="sdsds"
+        android:id="@+id/fragment_talents_wow_spec_elem_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_dark"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"/>
+
+
+    <TextView
+        android:id="@+id/fragment_talents_wow_spec_elem_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/fragment_talents_wow_spec_elem_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</LinearLayout>
+

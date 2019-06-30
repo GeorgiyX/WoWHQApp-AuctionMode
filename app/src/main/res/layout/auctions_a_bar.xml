@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
+
+    <!-- позже разметка из меню должна перейти сюда из меню -->
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="----"
+        android:id="@+id/auciton_action_bar_title"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+</LinearLayout>

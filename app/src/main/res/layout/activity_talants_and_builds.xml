@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/talents_activity"
+    tools:context=".TalantsAndBuildsActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/talents_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Toolbar">
+
+    </android.support.v7.widget.Toolbar>
+
+    <Button
+        android:id="@+id/talents_button_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/talents_button_reset_text" />
+
+    <FrameLayout
+        android:id="@+id/fragment_talents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

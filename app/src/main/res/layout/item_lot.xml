@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A CardView that contains a TextView -->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:padding="10dp"
+    android:layout_margin="4dp"
+    card_view:cardCornerRadius="4dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+
+        <!--icon, add_btn, show_more_btn-->
+        <!--В коде -->
+        <!--https://stackoverflow.com/questions/2459916/how-to-make-an-imageview-with-rounded-corners-->
+        <!--https://stackoverflow.com/questions/31675420/set-round-corner-image-in-imageview-->
+        <ImageView
+            android:id="@+id/lot_icon"
+            android:src="@drawable/question_mark_56"
+            android:background="@drawable/icon_border"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="8dp"
+            android:padding="3dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/lot_time"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:contentDescription="InGameIcon" />
+
+        <ImageButton
+            android:id="@+id/lot_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="add_btn"
+            android:src="@drawable/ic_baseline_turned_in_not_24px"
+            android:background="@color/transparent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="@id/lot_icon"
+            app:layout_constraintBottom_toTopOf="@id/lot_show_more_btn"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <ImageButton
+            android:id="@+id/lot_show_more_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="show_more_btn"
+            android:src="@drawable/ic_baseline_expand_more_24px"
+            android:background="@color/transparent"
+            app:layout_constraintTop_toBottomOf="@id/lot_add_btn"
+            app:layout_constraintEnd_toEndOf="@id/lot_add_btn"
+            app:layout_constraintBottom_toBottomOf="@id/lot_icon" />
+
+        <!-- END icon, add_btn, show_more_btn-->
+
+
+        <TextView
+            android:id="@+id/lot_owner"
+            android:background="@color/colorItemEl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:paddingRight="3dp"
+            android:paddingLeft="3dp"
+            android:layout_marginEnd="8dp"
+
+            android:text="123456111117890"
+            android:ellipsize="end"
+            android:maxEms="8"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="@id/lot_quantity"
+            app:layout_constraintEnd_toStartOf="@id/lot_server"
+            app:layout_constraintTop_toTopOf="@id/lot_time" />
+
+
+        <TextView
+            android:id="@+id/lot_server"
+            android:background="@color/colorItemEl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:paddingRight="3dp"
+            android:paddingLeft="3dp"
+            android:layout_marginEnd="8dp"
+
+            android:text="bd11111111111111111raa"
+            android:ellipsize="end"
+            android:maxEms="7"
+            android:maxLines="1"
+            app:layout_constraintStart_toEndOf="@id/lot_owner"
+            app:layout_constraintEnd_toStartOf="@id/lot_time"
+            app:layout_constraintTop_toTopOf="@id/lot_time" />
+
+        <TextView
+            android:id="@+id/lot_time"
+            android:text="24+"
+            android:background="@color/colorItemEl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="35dp"
+
+            android:gravity="center"
+            android:paddingRight="3dp"
+            android:paddingLeft="3dp"
+            android:layout_marginTop="5dp"
+
+            app:layout_constraintEnd_toEndOf="@id/lot_bid"
+            app:layout_constraintBottom_toBottomOf="@id/lot_icon" />
+
+
+        <!--Вторая строка-->
+        <TextView
+            android:id="@+id/lot_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+
+            android:background="@color/colorItemEl"
+            android:gravity="center"
+            android:maxLength="12"
+            android:paddingLeft="3dp"
+
+
+            android:paddingRight="3dp"
+            android:text="x200"
+            app:layout_constraintEnd_toStartOf="@id/lot_buyout"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/lot_name"
+            app:layout_constraintTop_toTopOf="@id/lot_bid" />
+        <TextView
+            android:id="@+id/lot_buyout"
+            android:background="@color/colorItemEl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:paddingRight="3dp"
+            android:paddingLeft="3dp"
+            android:layout_marginEnd="8dp"
+
+            android:text="1234567g22c23s"
+            android:ellipsize="end"
+            android:maxEms="7"
+            android:maxLines="1"
+            app:layout_constraintStart_toEndOf="@id/lot_quantity"
+            app:layout_constraintEnd_toStartOf="@id/lot_bid"
+            app:layout_constraintTop_toTopOf="@id/lot_bid" />
+
+        <TextView
+            android:id="@+id/lot_bid"
+            android:background="@color/colorItemEl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:paddingRight="3dp"
+            android:paddingLeft="3dp"
+
+            android:text="1234567g22c23s"
+            android:ellipsize="end"
+            android:maxEms="1"
+
+            android:maxLines="1"
+            app:layout_constraintStart_toEndOf="@id/lot_buyout"
+            app:layout_constraintEnd_toEndOf="@id/lot_name"
+            app:layout_constraintTop_toBottomOf="@id/lot_name"
+            app:layout_constraintBottom_toTopOf="@id/lot_time"/>
+
+
+        <!--Первая строка-->
+        <TextView
+            android:id="@+id/lot_name"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+
+            tools:text="Enchant Cloak"
+            android:textColor="@color/navy"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="5sp"
+            android:ellipsize="end"
+            android:maxEms="10"
+            android:maxLines="1"
+
+
+            app:layout_constraintStart_toEndOf="@id/lot_icon"
+            app:layout_constraintEnd_toStartOf="@id/lot_add_btn"
+            app:layout_constraintTop_toTopOf="@id/lot_icon"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

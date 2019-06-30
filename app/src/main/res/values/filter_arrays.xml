@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filter_group0">
+        <item name="class_name">Расходуемые</item>
+        <item name="class_id">0</item>
+    </string-array>
+    <!--Children elements of "Расходуемые" group -->
+    <string-array name="filter_group0_children0">
+        <item name="subclass_name">Взрывчатка и устройства</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group0_children1">
+        <item name="subclass_name">Еда и напитки</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group0_children2">
+        <item name="subclass_name">Зелья</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group0_children3">
+        <item name="subclass_name">Эликсиры</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group0_children4">
+        <item name="subclass_name">Настойки</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group0_children5">
+        <item name="subclass_name">Бинты</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group0_children6">
+        <item name="subclass_name">Другое</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group0_children7">
+        <item name="subclass_name">Вантийская руна</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Расходуемые" group -->
+    <array name="filter_group0_children_array_of_reference">
+        <item>@array/filter_group0_children0</item>
+        <item>@array/filter_group0_children1</item>
+        <item>@array/filter_group0_children2</item>
+        <item>@array/filter_group0_children3</item>
+        <item>@array/filter_group0_children4</item>
+        <item>@array/filter_group0_children5</item>
+        <item>@array/filter_group0_children6</item>
+        <item>@array/filter_group0_children7</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group1">
+        <item name="class_name">Контейнер</item>
+        <item name="class_id">1</item>
+    </string-array>
+    <!--Children elements of "Контейнер" group -->
+    <string-array name="filter_group1_children0">
+        <item name="subclass_name">Сумка</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group1_children1">
+        <item name="subclass_name">Сумка душ</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group1_children2">
+        <item name="subclass_name">Сумка травника</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group1_children3">
+        <item name="subclass_name">Сумка зачаровывателя</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group1_children4">
+        <item name="subclass_name">Сумка инженера</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group1_children5">
+        <item name="subclass_name">Сумка ювелира</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group1_children6">
+        <item name="subclass_name">Сумка шахтера</item>
+        <item name="subclass_id">6</item>
+    </string-array>
+    <string-array name="filter_group1_children7">
+        <item name="subclass_name">Сумка кожевника</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group1_children8">
+        <item name="subclass_name">Сумка начертателя</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group1_children9">
+        <item name="subclass_name">Ящик для рыболовных снастей</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <string-array name="filter_group1_children10">
+        <item name="subclass_name">Сумка для продуктов</item>
+        <item name="subclass_id">10</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Контейнер" group -->
+    <array name="filter_group1_children_array_of_reference">
+        <item>@array/filter_group1_children0</item>
+        <item>@array/filter_group1_children1</item>
+        <item>@array/filter_group1_children2</item>
+        <item>@array/filter_group1_children3</item>
+        <item>@array/filter_group1_children4</item>
+        <item>@array/filter_group1_children5</item>
+        <item>@array/filter_group1_children6</item>
+        <item>@array/filter_group1_children7</item>
+        <item>@array/filter_group1_children8</item>
+        <item>@array/filter_group1_children9</item>
+        <item>@array/filter_group1_children10</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group2">
+        <item name="class_name">Оружие</item>
+        <item name="class_id">2</item>
+    </string-array>
+    <!--Children elements of "Оружие" group -->
+    <string-array name="filter_group2_children0">
+        <item name="subclass_name">Двуручное оружие ближнего боя</item>
+        <item name="subclass_id">1378</item>
+    </string-array>
+    <string-array name="filter_group2_children1">
+        <item name="subclass_name">Одноручное оружие ближнего боя</item>
+        <item name="subclass_id">41617</item>
+    </string-array>
+    <string-array name="filter_group2_children2">
+        <item name="subclass_name">Одноручное оружие ближнего боя</item>
+        <item name="subclass_id">41105</item>
+    </string-array>
+    <string-array name="filter_group2_children3">
+        <item name="subclass_name">Одноручное оружие ближнего боя</item>
+        <item name="subclass_id">8849</item>
+    </string-array>
+    <string-array name="filter_group2_children4">
+        <item name="subclass_name">Одноручное оружие ближнего боя</item>
+        <item name="subclass_id">8337</item>
+    </string-array>
+    <string-array name="filter_group2_children5">
+        <item name="subclass_name">Оружие ближнего боя</item>
+        <item name="subclass_id">174067</item>
+    </string-array>
+    <string-array name="filter_group2_children6">
+        <item name="subclass_name">Оружие ближнего боя</item>
+        <item name="subclass_id">173555</item>
+    </string-array>
+    <string-array name="filter_group2_children7">
+        <item name="subclass_name">Топор</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group2_children8">
+        <item name="subclass_name">Топор</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group2_children9">
+        <item name="subclass_name">Лук</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group2_children10">
+        <item name="subclass_name">Огнестрельное</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group2_children11">
+        <item name="subclass_name">Дробящее</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group2_children12">
+        <item name="subclass_name">Дробящее</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group2_children13">
+        <item name="subclass_name">Древковое</item>
+        <item name="subclass_id">6</item>
+    </string-array>
+    <string-array name="filter_group2_children14">
+        <item name="subclass_name">Меч</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group2_children15">
+        <item name="subclass_name">Меч</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group2_children16">
+        <item name="subclass_name">Оружие дальнего боя</item>
+        <item name="subclass_id">262156</item>
+    </string-array>
+    <string-array name="filter_group2_children17">
+        <item name="subclass_name">Боевые клинки</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <string-array name="filter_group2_children18">
+        <item name="subclass_name">Посох</item>
+        <item name="subclass_id">10</item>
+    </string-array>
+    <string-array name="filter_group2_children19">
+        <item name="subclass_name">Медвежьи когти</item>
+        <item name="subclass_id">11</item>
+    </string-array>
+    <string-array name="filter_group2_children20">
+        <item name="subclass_name">Кошачьи когти</item>
+        <item name="subclass_id">12</item>
+    </string-array>
+    <string-array name="filter_group2_children21">
+        <item name="subclass_name">Кистевое</item>
+        <item name="subclass_id">13</item>
+    </string-array>
+    <string-array name="filter_group2_children22">
+        <item name="subclass_name">Разное</item>
+        <item name="subclass_id">14</item>
+    </string-array>
+    <string-array name="filter_group2_children23">
+        <item name="subclass_name">Кинжал</item>
+        <item name="subclass_id">15</item>
+    </string-array>
+    <string-array name="filter_group2_children24">
+        <item name="subclass_name">Метательное</item>
+        <item name="subclass_id">16</item>
+    </string-array>
+    <string-array name="filter_group2_children25">
+        <item name="subclass_name">Копье</item>
+        <item name="subclass_id">17</item>
+    </string-array>
+    <string-array name="filter_group2_children26">
+        <item name="subclass_name">Арбалет</item>
+        <item name="subclass_id">18</item>
+    </string-array>
+    <string-array name="filter_group2_children27">
+        <item name="subclass_name">Жезл</item>
+        <item name="subclass_id">19</item>
+    </string-array>
+    <string-array name="filter_group2_children28">
+        <item name="subclass_name">Удочка</item>
+        <item name="subclass_id">20</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Оружие" group -->
+    <array name="filter_group2_children_array_of_reference">
+        <item>@array/filter_group2_children0</item>
+        <item>@array/filter_group2_children1</item>
+        <item>@array/filter_group2_children2</item>
+        <item>@array/filter_group2_children3</item>
+        <item>@array/filter_group2_children4</item>
+        <item>@array/filter_group2_children5</item>
+        <item>@array/filter_group2_children6</item>
+        <item>@array/filter_group2_children7</item>
+        <item>@array/filter_group2_children8</item>
+        <item>@array/filter_group2_children9</item>
+        <item>@array/filter_group2_children10</item>
+        <item>@array/filter_group2_children11</item>
+        <item>@array/filter_group2_children12</item>
+        <item>@array/filter_group2_children13</item>
+        <item>@array/filter_group2_children14</item>
+        <item>@array/filter_group2_children15</item>
+        <item>@array/filter_group2_children16</item>
+        <item>@array/filter_group2_children17</item>
+        <item>@array/filter_group2_children18</item>
+        <item>@array/filter_group2_children19</item>
+        <item>@array/filter_group2_children20</item>
+        <item>@array/filter_group2_children21</item>
+        <item>@array/filter_group2_children22</item>
+        <item>@array/filter_group2_children23</item>
+        <item>@array/filter_group2_children24</item>
+        <item>@array/filter_group2_children25</item>
+        <item>@array/filter_group2_children26</item>
+        <item>@array/filter_group2_children27</item>
+        <item>@array/filter_group2_children28</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group3">
+        <item name="class_name">Самоцвет</item>
+        <item name="class_id">3</item>
+    </string-array>
+    <!--Children elements of "Самоцвет" group -->
+    <string-array name="filter_group3_children0">
+        <item name="subclass_name">Интеллект</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group3_children1">
+        <item name="subclass_name">Ловкость</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group3_children2">
+        <item name="subclass_name">Сила</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group3_children3">
+        <item name="subclass_name">Выносливость</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group3_children4">
+        <item name="subclass_name">Дух</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group3_children5">
+        <item name="subclass_name">Критический удар</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group3_children6">
+        <item name="subclass_name">Искусность</item>
+        <item name="subclass_id">6</item>
+    </string-array>
+    <string-array name="filter_group3_children7">
+        <item name="subclass_name">Ускорение</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group3_children8">
+        <item name="subclass_name">Универсальность</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group3_children9">
+        <item name="subclass_name">Другое</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <string-array name="filter_group3_children10">
+        <item name="subclass_name">Различные характеристики</item>
+        <item name="subclass_id">10</item>
+    </string-array>
+    <string-array name="filter_group3_children11">
+        <item name="subclass_name">Реликвия артефакта</item>
+        <item name="subclass_id">11</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Самоцвет" group -->
+    <array name="filter_group3_children_array_of_reference">
+        <item>@array/filter_group3_children0</item>
+        <item>@array/filter_group3_children1</item>
+        <item>@array/filter_group3_children2</item>
+        <item>@array/filter_group3_children3</item>
+        <item>@array/filter_group3_children4</item>
+        <item>@array/filter_group3_children5</item>
+        <item>@array/filter_group3_children6</item>
+        <item>@array/filter_group3_children7</item>
+        <item>@array/filter_group3_children8</item>
+        <item>@array/filter_group3_children9</item>
+        <item>@array/filter_group3_children10</item>
+        <item>@array/filter_group3_children11</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group4">
+        <item name="class_name">Доспехи</item>
+        <item name="class_id">4</item>
+    </string-array>
+    <!--Children elements of "Доспехи" group -->
+    <string-array name="filter_group4_children0">
+        <item name="subclass_name">Кожа</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group4_children1">
+        <item name="subclass_name">Кольчуга</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group4_children2">
+        <item name="subclass_name">Латы</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group4_children3">
+        <item name="subclass_name">Декоративный предмет</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group4_children4">
+        <item name="subclass_name">Щит</item>
+        <item name="subclass_id">6</item>
+    </string-array>
+    <string-array name="filter_group4_children5">
+        <item name="subclass_name">Манускрипт</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group4_children6">
+        <item name="subclass_name">Идол</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group4_children7">
+        <item name="subclass_name">Тотем</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <string-array name="filter_group4_children8">
+        <item name="subclass_name">Печать</item>
+        <item name="subclass_id">10</item>
+    </string-array>
+    <string-array name="filter_group4_children9">
+        <item name="subclass_name">Реликвия</item>
+        <item name="subclass_id">11</item>
+    </string-array>
+    <string-array name="filter_group4_children10">
+        <item name="subclass_name">Щит</item>
+        <item name="subclass_id">64</item>
+    </string-array>
+    <string-array name="filter_group4_children11">
+        <item name="subclass_name">Щит</item>
+        <item name="subclass_id">96</item>
+    </string-array>
+    <string-array name="filter_group4_children12">
+        <item name="subclass_name">Разное</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group4_children13">
+        <item name="subclass_name">Ткань</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Доспехи" group -->
+    <array name="filter_group4_children_array_of_reference">
+        <item>@array/filter_group4_children0</item>
+        <item>@array/filter_group4_children1</item>
+        <item>@array/filter_group4_children2</item>
+        <item>@array/filter_group4_children3</item>
+        <item>@array/filter_group4_children4</item>
+        <item>@array/filter_group4_children5</item>
+        <item>@array/filter_group4_children6</item>
+        <item>@array/filter_group4_children7</item>
+        <item>@array/filter_group4_children8</item>
+        <item>@array/filter_group4_children9</item>
+        <item>@array/filter_group4_children10</item>
+        <item>@array/filter_group4_children11</item>
+        <item>@array/filter_group4_children12</item>
+        <item>@array/filter_group4_children13</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group5">
+        <item name="class_name">Реагент</item>
+        <item name="class_id">5</item>
+    </string-array>
+    <!--Children elements of "Реагент" group -->
+    <string-array name="filter_group5_children0">
+        <item name="subclass_name">Реагент</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group5_children1">
+        <item name="subclass_name">Краеугольный камень</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Реагент" group -->
+    <array name="filter_group5_children_array_of_reference">
+        <item>@array/filter_group5_children0</item>
+        <item>@array/filter_group5_children1</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group6">
+        <item name="class_name">Боеприпасы</item>
+        <item name="class_id">6</item>
+    </string-array>
+    <!--Children elements of "Боеприпасы" group -->
+    <string-array name="filter_group6_children0">
+        <item name="subclass_name">Стрелы</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group6_children1">
+        <item name="subclass_name">Пули</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Боеприпасы" group -->
+    <array name="filter_group6_children_array_of_reference">
+        <item>@array/filter_group6_children0</item>
+        <item>@array/filter_group6_children1</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group7">
+        <item name="class_name">Ремесло</item>
+        <item name="class_id">7</item>
+    </string-array>
+    <!--Children elements of "Ремесло" group -->
+    <string-array name="filter_group7_children0">
+        <item name="subclass_name">Стихии</item>
+        <item name="subclass_id">10</item>
+    </string-array>
+    <string-array name="filter_group7_children1">
+        <item name="subclass_name">Чары для оружия - Obsolete</item>
+        <item name="subclass_id">15</item>
+    </string-array>
+    <string-array name="filter_group7_children2">
+        <item name="subclass_name">Начертание</item>
+        <item name="subclass_id">16</item>
+    </string-array>
+    <string-array name="filter_group7_children3">
+        <item name="subclass_name">Ткань</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group7_children4">
+        <item name="subclass_name">Кожа</item>
+        <item name="subclass_id">6</item>
+    </string-array>
+    <string-array name="filter_group7_children5">
+        <item name="subclass_name">Металл и камень</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group7_children6">
+        <item name="subclass_name">Кулинария</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group7_children7">
+        <item name="subclass_name">Трава</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <string-array name="filter_group7_children8">
+        <item name="subclass_name">Наложение чар</item>
+        <item name="subclass_id">12</item>
+    </string-array>
+    <string-array name="filter_group7_children9">
+        <item name="subclass_name">Ювелирное дело</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group7_children10">
+        <item name="subclass_name">Детали</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group7_children11">
+        <item name="subclass_name">Другое</item>
+        <item name="subclass_id">11</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Ремесло" group -->
+    <array name="filter_group7_children_array_of_reference">
+        <item>@array/filter_group7_children0</item>
+        <item>@array/filter_group7_children1</item>
+        <item>@array/filter_group7_children2</item>
+        <item>@array/filter_group7_children3</item>
+        <item>@array/filter_group7_children4</item>
+        <item>@array/filter_group7_children5</item>
+        <item>@array/filter_group7_children6</item>
+        <item>@array/filter_group7_children7</item>
+        <item>@array/filter_group7_children8</item>
+        <item>@array/filter_group7_children9</item>
+        <item>@array/filter_group7_children10</item>
+        <item>@array/filter_group7_children11</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group8">
+        <item name="class_name">Рецепт</item>
+        <item name="class_id">9</item>
+    </string-array>
+    <!--Children elements of "Рецепт" group -->
+    <string-array name="filter_group8_children0">
+        <item name="subclass_name">Книга</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group8_children1">
+        <item name="subclass_name">Кожевничество</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group8_children2">
+        <item name="subclass_name">Портняжное дело</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group8_children3">
+        <item name="subclass_name">Инженерное дело</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group8_children4">
+        <item name="subclass_name">Кузнечное дело</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group8_children5">
+        <item name="subclass_name">Кулинария</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group8_children6">
+        <item name="subclass_name">Алхимия</item>
+        <item name="subclass_id">6</item>
+    </string-array>
+    <string-array name="filter_group8_children7">
+        <item name="subclass_name">Первая помощь</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group8_children8">
+        <item name="subclass_name">Наложение чар</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group8_children9">
+        <item name="subclass_name">Рыбная ловля</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <string-array name="filter_group8_children10">
+        <item name="subclass_name">Ювелирное дело</item>
+        <item name="subclass_id">10</item>
+    </string-array>
+    <string-array name="filter_group8_children11">
+        <item name="subclass_name">Начертание</item>
+        <item name="subclass_id">11</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Рецепт" group -->
+    <array name="filter_group8_children_array_of_reference">
+        <item>@array/filter_group8_children0</item>
+        <item>@array/filter_group8_children1</item>
+        <item>@array/filter_group8_children2</item>
+        <item>@array/filter_group8_children3</item>
+        <item>@array/filter_group8_children4</item>
+        <item>@array/filter_group8_children5</item>
+        <item>@array/filter_group8_children6</item>
+        <item>@array/filter_group8_children7</item>
+        <item>@array/filter_group8_children8</item>
+        <item>@array/filter_group8_children9</item>
+        <item>@array/filter_group8_children10</item>
+        <item>@array/filter_group8_children11</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group9">
+        <item name="class_name">Колчан</item>
+        <item name="class_id">11</item>
+    </string-array>
+    <!--Children elements of "Колчан" group -->
+    <string-array name="filter_group9_children0">
+        <item name="subclass_name">Колчан</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group9_children1">
+        <item name="subclass_name">Подсумок</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Колчан" group -->
+    <array name="filter_group9_children_array_of_reference">
+        <item>@array/filter_group9_children0</item>
+        <item>@array/filter_group9_children1</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group10">
+        <item name="class_name">Задание</item>
+        <item name="class_id">12</item>
+    </string-array>
+    <!--Children elements of "Задание" group -->
+    <string-array name="filter_group10_children0">
+        <item name="subclass_name">Задания</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Задание" group -->
+    <array name="filter_group10_children_array_of_reference">
+        <item>@array/filter_group10_children0</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group11">
+        <item name="class_name">Ключ</item>
+        <item name="class_id">13</item>
+    </string-array>
+    <!--Children elements of "Ключ" group -->
+    <string-array name="filter_group11_children0">
+        <item name="subclass_name">Ключ</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group11_children1">
+        <item name="subclass_name">Отмычка</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Ключ" group -->
+    <array name="filter_group11_children_array_of_reference">
+        <item>@array/filter_group11_children0</item>
+        <item>@array/filter_group11_children1</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group12">
+        <item name="class_name">Разное</item>
+        <item name="class_id">15</item>
+    </string-array>
+    <!--Children elements of "Разное" group -->
+    <string-array name="filter_group12_children0">
+        <item name="subclass_name">Хлам</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <string-array name="filter_group12_children1">
+        <item name="subclass_name">Реагенты</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group12_children2">
+        <item name="subclass_name">Питомцы</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group12_children3">
+        <item name="subclass_name">Праздничные предметы</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group12_children4">
+        <item name="subclass_name">Другое</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group12_children5">
+        <item name="subclass_name">Средство передвижения</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Разное" group -->
+    <array name="filter_group12_children_array_of_reference">
+        <item>@array/filter_group12_children0</item>
+        <item>@array/filter_group12_children1</item>
+        <item>@array/filter_group12_children2</item>
+        <item>@array/filter_group12_children3</item>
+        <item>@array/filter_group12_children4</item>
+        <item>@array/filter_group12_children5</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group13">
+        <item name="class_name">Символ</item>
+        <item name="class_id">16</item>
+    </string-array>
+    <!--Children elements of "Символ" group -->
+    <string-array name="filter_group13_children0">
+        <item name="subclass_name">Воин</item>
+        <item name="subclass_id">1</item>
+    </string-array>
+    <string-array name="filter_group13_children1">
+        <item name="subclass_name">Паладин</item>
+        <item name="subclass_id">2</item>
+    </string-array>
+    <string-array name="filter_group13_children2">
+        <item name="subclass_name">Охотник</item>
+        <item name="subclass_id">3</item>
+    </string-array>
+    <string-array name="filter_group13_children3">
+        <item name="subclass_name">Разбойник</item>
+        <item name="subclass_id">4</item>
+    </string-array>
+    <string-array name="filter_group13_children4">
+        <item name="subclass_name">Жрец</item>
+        <item name="subclass_id">5</item>
+    </string-array>
+    <string-array name="filter_group13_children5">
+        <item name="subclass_name">Рыцарь смерти</item>
+        <item name="subclass_id">6</item>
+    </string-array>
+    <string-array name="filter_group13_children6">
+        <item name="subclass_name">Шаман</item>
+        <item name="subclass_id">7</item>
+    </string-array>
+    <string-array name="filter_group13_children7">
+        <item name="subclass_name">Маг</item>
+        <item name="subclass_id">8</item>
+    </string-array>
+    <string-array name="filter_group13_children8">
+        <item name="subclass_name">Чернокнижник</item>
+        <item name="subclass_id">9</item>
+    </string-array>
+    <string-array name="filter_group13_children9">
+        <item name="subclass_name">Монах</item>
+        <item name="subclass_id">10</item>
+    </string-array>
+    <string-array name="filter_group13_children10">
+        <item name="subclass_name">Друид</item>
+        <item name="subclass_id">11</item>
+    </string-array>
+    <string-array name="filter_group13_children11">
+        <item name="subclass_name">Охотник на демонов</item>
+        <item name="subclass_id">12</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Символ" group -->
+    <array name="filter_group13_children_array_of_reference">
+        <item>@array/filter_group13_children0</item>
+        <item>@array/filter_group13_children1</item>
+        <item>@array/filter_group13_children2</item>
+        <item>@array/filter_group13_children3</item>
+        <item>@array/filter_group13_children4</item>
+        <item>@array/filter_group13_children5</item>
+        <item>@array/filter_group13_children6</item>
+        <item>@array/filter_group13_children7</item>
+        <item>@array/filter_group13_children8</item>
+        <item>@array/filter_group13_children9</item>
+        <item>@array/filter_group13_children10</item>
+        <item>@array/filter_group13_children11</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group14">
+        <item name="class_name">Боевые питомцы</item>
+        <item name="class_id">17</item>
+    </string-array>
+    <!--Children elements of "Боевые питомцы" group -->
+    <string-array name="filter_group14_children0">
+        <item name="subclass_name">Боевой питомец</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Боевые питомцы" group -->
+    <array name="filter_group14_children_array_of_reference">
+        <item>@array/filter_group14_children0</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <string-array name="filter_group15">
+        <item name="class_name">Жетон WoW</item>
+        <item name="class_id">18</item>
+    </string-array>
+    <!--Children elements of "Жетон WoW" group -->
+    <string-array name="filter_group15_children0">
+        <item name="subclass_name">Жетон WoW</item>
+        <item name="subclass_id">0</item>
+    </string-array>
+    <!--End children elements-->
+
+    <!--Children array of reference of "Жетон WoW" group -->
+    <array name="filter_group15_children_array_of_reference">
+        <item>@array/filter_group15_children0</item>
+    </array>
+    <!--End children array of reference-->
+
+
+
+    <!--Group array of reference-->
+    <array name="filter_group_array_of_reference">
+        <item>@array/filter_group0</item>
+        <item>@array/filter_group1</item>
+        <item>@array/filter_group2</item>
+        <item>@array/filter_group3</item>
+        <item>@array/filter_group4</item>
+        <item>@array/filter_group5</item>
+        <item>@array/filter_group6</item>
+        <item>@array/filter_group7</item>
+        <item>@array/filter_group8</item>
+        <item>@array/filter_group9</item>
+        <item>@array/filter_group10</item>
+        <item>@array/filter_group11</item>
+        <item>@array/filter_group12</item>
+        <item>@array/filter_group13</item>
+        <item>@array/filter_group14</item>
+        <item>@array/filter_group15</item>
+    </array>
+    <!--End group array of reference-->
+
+</resources>
