@@ -7,8 +7,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,6 @@ import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wowhqapp.R;
@@ -57,7 +57,7 @@ public class AuctionsFilterFragment extends Fragment implements MainContract.Auc
     private EditText mPriceStartEditText;
     private EditText mPriceEndEditText;
     private Spinner mOrderBySpinner;
-    private Button mApllyButton;
+    private Button mApplyButton;
     private Button mResetButton;
     private View.OnClickListener mOnButtonClickListener;
 
@@ -91,7 +91,7 @@ public class AuctionsFilterFragment extends Fragment implements MainContract.Auc
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        mApllyButton = null;
+        mApplyButton = null;
         mResetButton = null;
         mOnButtonClickListener = new Button.OnClickListener() {
             @Override
@@ -116,11 +116,11 @@ public class AuctionsFilterFragment extends Fragment implements MainContract.Auc
         // Inflate the layout for this fragment
         View root_view = inflater.inflate(R.layout.fragment_auctions_filter, container, false);
         mExpandableListView = (ExpandableListView) root_view.findViewById(R.id.fragment_filter_auctions);
-        mApllyButton = (Button) root_view.findViewById(R.id.filter_btn_apply);
+        mApplyButton = (Button) root_view.findViewById(R.id.filter_btn_apply);
         mResetButton = (Button) root_view.findViewById(R.id.filter_btn_reset);
         mListener.inInitFilterFragment();
         mResetButton.setOnClickListener(mOnButtonClickListener);
-        mApllyButton.setOnClickListener(mOnButtonClickListener);
+        mApplyButton.setOnClickListener(mOnButtonClickListener);
         return root_view;
     }
 
@@ -192,18 +192,27 @@ public class AuctionsFilterFragment extends Fragment implements MainContract.Auc
             mOrderBySpinner.setSelection(orderPosition);
         }
 
-        EditText.OnEditorActionListener editorActionListener = new EditText.OnEditorActionListener() {
+        TextWatcher textWatcher = new TextWatcher() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
                 sendInputViewData();
-                return false;
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         };
 
-        mLevelStartEditText.setOnEditorActionListener(editorActionListener);
-        mLevelEndEditText.setOnEditorActionListener(editorActionListener);
-        mPriceStartEditText.setOnEditorActionListener(editorActionListener);
-        mPriceEndEditText.setOnEditorActionListener(editorActionListener);
+        mLevelStartEditText.addTextChangedListener(textWatcher);
+        mLevelEndEditText.addTextChangedListener(textWatcher);
+        mPriceStartEditText.addTextChangedListener(textWatcher);
+        mPriceEndEditText.addTextChangedListener(textWatcher);
 
         mOrderBySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -240,8 +249,10 @@ public class AuctionsFilterFragment extends Fragment implements MainContract.Auc
     public void setFilterResetButtonVisibility(boolean isVisible) {
         if (mResetButton != null){
             if (isVisible){
+                Log.v(WowhqApplication.LOG_TAG, "VISIBLE RESET");
                 mResetButton.setVisibility(View.VISIBLE);
             }else {
+                Log.v(WowhqApplication.LOG_TAG, "GONE RESET");
                 mResetButton.setVisibility(View.GONE);
             }
         }
@@ -255,6 +266,11 @@ public class AuctionsFilterFragment extends Fragment implements MainContract.Auc
     private void  sendInputViewData(){
         mListener.onInputViewChange(mLevelStartEditText.getText().toString(), mLevelEndEditText.getText().toString(),
                 mPriceStartEditText.getText().toString(),mPriceEndEditText.getText().toString(), mOrderBySpinner.getSelectedItemPosition());
+    }
+
+    public void setContextAndListener(Context context){
+        mListener = (OnFragmentInteractionListener) context;
+        mContext = context;
     }
 
     /**

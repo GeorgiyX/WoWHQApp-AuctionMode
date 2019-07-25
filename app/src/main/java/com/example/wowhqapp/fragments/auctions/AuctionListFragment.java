@@ -6,11 +6,13 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.wowhqapp.R;
+import com.example.wowhqapp.WowhqApplication;
 import com.example.wowhqapp.contracts.MainContract;
 import com.example.wowhqapp.databases.entity.Lot;
 
@@ -48,6 +50,17 @@ public class AuctionListFragment extends Fragment implements MainContract.Auctio
     public AuctionListFragment() {
     }
 
+
+
+    public static AuctionListFragment newInstance(Boolean type) {
+        Log.v(WowhqApplication.LOG_TAG, "[AuctionListFragment] - new AuctionListFragment");
+        AuctionListFragment auctionListFragment = new AuctionListFragment();
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(AuctionListFragment.KEY_TYPE, type);
+        auctionListFragment.setArguments(bundle);
+        return auctionListFragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +96,8 @@ public class AuctionListFragment extends Fragment implements MainContract.Auctio
                 super.onScrolled(recyclerView, dx, dy);
             }
         };
+        setRetainInstance(true);
+        Log.v(WowhqApplication.LOG_TAG, "AuctionsListFragment - onCreate()");
     }
 
 
@@ -91,15 +106,20 @@ public class AuctionListFragment extends Fragment implements MainContract.Auctio
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_auctionlist_list, container, false);
-
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             mRecyclerView = (RecyclerView) view;
+
             mLinearLayoutManager = new LinearLayoutManager(context);
             mRecyclerView.setLayoutManager(mLinearLayoutManager);
             mRecyclerView.addOnScrollListener(mOnScrollListener);
+            if (mRecyclerView.getAdapter() == null && mAuctionListRecyclerViewAdapter !=null){
+                mRecyclerView.setAdapter(mAuctionListRecyclerViewAdapter);
+                Log.v(WowhqApplication.LOG_TAG, "AuctionsListFragment - onCreateView - \"Восстанавливаем адаптер\"");
+            }
         }
+        Log.v(WowhqApplication.LOG_TAG, "AuctionsListFragment - onCreateView");
         return view;
     }
 
@@ -107,6 +127,7 @@ public class AuctionListFragment extends Fragment implements MainContract.Auctio
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
         //Создаем слушателя нажатия на лот, реализованного в Activity
         mLastScrollDownNotToEnd = mLastScrollDownDate = mLastScrollUpDate = new Date();
         if (context instanceof OnListFragmentInteractionListener) {
@@ -116,6 +137,7 @@ public class AuctionListFragment extends Fragment implements MainContract.Auctio
             throw new RuntimeException(context.toString()
                     + " must implement OnListFragmentInteractionListener");
         }
+        Log.v(WowhqApplication.LOG_TAG, "AuctionsListFragment - onAttach");
     }
 
     @Override
@@ -135,6 +157,12 @@ public class AuctionListFragment extends Fragment implements MainContract.Auctio
     @Override
     public void notifyAuctionsChange() {
         mAuctionListRecyclerViewAdapter.notifyDataSetChanged();
+    }
+
+    public void setContextAndListener(Context context){
+        mListener = (AuctionListFragment.OnListFragmentInteractionListener) context;
+        mContext = context;
+        mAuctionListRecyclerViewAdapter.setContextAndListener(context);
     }
 
     /**

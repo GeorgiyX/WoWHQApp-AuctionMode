@@ -26,8 +26,8 @@ import java.util.List;
 public class AuctionListRecyclerViewAdapter extends RecyclerView.Adapter<AuctionListRecyclerViewAdapter.ViewHolder> {
 
     private final List<Lot> mLots;
-    private final OnListFragmentInteractionListener mListener;
-    private final Context mContext; //Пока сохраняем context, но дальшоое можно поменять
+    private OnListFragmentInteractionListener mListener;
+    private Context mContext; //Пока сохраняем context, но дальшоое можно поменять
 
     public AuctionListRecyclerViewAdapter(List<Lot> lots, Context context) {
         mLots = lots;
@@ -77,6 +77,11 @@ public class AuctionListRecyclerViewAdapter extends RecyclerView.Adapter<Auction
     @Override
     public int getItemCount() {
         return mLots.size();
+    }
+
+    public void setContextAndListener(Context context){
+        mListener = (OnListFragmentInteractionListener)context;
+        mContext = (Context) context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

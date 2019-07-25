@@ -84,6 +84,7 @@ public interface MainContract {
     //Auctions
     interface AuctionsPresenter{
         void init(Boolean type, String[] titles, Integer[] mNavMenuElements);
+        void setAuctionsView(MainContract.AuctionsView auctionsView);
         void onHamburgerClick();
         void notifyUpdatedData();
         void notifyLittleData();
@@ -99,6 +100,7 @@ public interface MainContract {
         void onSearchCollapse();
         void onQueryTextChange(String text);
         void onBackPressed();
+        void onCreateOptionsMenu();
 
         void onFilterClick();
         void onFilterApplyButtonClick();

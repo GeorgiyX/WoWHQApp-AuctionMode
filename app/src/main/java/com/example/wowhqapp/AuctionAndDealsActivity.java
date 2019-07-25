@@ -40,6 +40,8 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
     private MenuItem mSearchMenuItem;
     private MenuItem mFilterMenuItem;
     private SearchView mSearchView;
+    private final String AUC_FILTER_FRAGMENT_TAG = "Auction Filter Fragment";
+    private final String AUC_FRAGMENT_TAG = "Auction Fragment";
 
 
 
@@ -48,26 +50,33 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
         setContentView(R.layout.activity_auction_and_deals);
         super.onCreate(savedInstanceState);
 
-        mAuctionsFragment = new AuctionListFragment();
-        mAuctionsFilterFragment = null; // null (чтобы не делать лишнюю работу без надобности) или восстановление из памяти
-//        Fragment auctions_frament = getSupportFragmentManager().findFragmentById(R.id.auctions_frame_lay);
-//        if (auctions_frament == null) {
-//            mAuctionsFragment = new AuctionListFragment();
-//        }
+        mAuctionsFragment = null;
+        mAuctionsFilterFragment = null;
 
-
-        mAuctionsPresenter = new AuctionsPresenter(this, new SettingRepository(getSharedPreferences(SettingRepository.APP_PREFERENCES, Context.MODE_PRIVATE)));
-
-//        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        getSupportActionBar().setCustomView(R.layout.auctions_a_bar);
-//        mToolbarTitle = (TextView) getSupportActionBar().getCustomView().findViewById(R.id.auciton_action_bar_title);
+        //Восстановление фрагментов и Presenter'a
+        mAuctionsPresenter = (AuctionsPresenter) getLastCustomNonConfigurationInstance();
+        mAuctionsFilterFragment = (AuctionsFilterFragment) getSupportFragmentManager().findFragmentByTag(AUC_FILTER_FRAGMENT_TAG);
+        mAuctionsFragment = (AuctionListFragment) getSupportFragmentManager().findFragmentByTag(AUC_FRAGMENT_TAG);
+        if (mAuctionsFilterFragment != null) {
+            mAuctionsFilterFragment.setContextAndListener(this);
+        }
+        if (mAuctionsFragment != null) {
+            mAuctionsFragment.setContextAndListener(this);
+        }
+        if (mAuctionsPresenter == null){
+            Log.v(WowhqApplication.LOG_TAG, "[AuctionAndDealsActivity] Create Presenter");
+            mAuctionsPresenter = new AuctionsPresenter(this, new SettingRepository(getSharedPreferences(SettingRepository.APP_PREFERENCES, Context.MODE_PRIVATE)));
+        }else {
+            //Нужно сменить ссылку на Activity, так как в старом presenter'e ссыль на старую Activity
+            mAuctionsPresenter.setAuctionsView(this);
+        }
 
         mAuctionsPresenter.init(getIntent().getExtras().getBoolean(MenuActivity.KEY_TYPE), getResources().getStringArray(R.array.auction_title), mNavMenuElements);
+
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()){
 //            case android.R.id.home:
 //                Log.v(WowhqApplication.LOG_TAG, "[AuctionAndDealsActivity] onOptionsItemSelected: home");
@@ -76,13 +85,12 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
 //                //....
 //                break;
             case R.id.auctions_menu_filter:
-                Log.v(WowhqApplication.LOG_TAG, "[AuctionAndDealsActivity] onOptionsItemSelected: auctions_menu_search");
                 mAuctionsPresenter.onFilterClick();
                 break;
         }
-
         return true;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -91,6 +99,8 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
         mFilterMenuItem = menu.findItem(R.id.auctions_menu_filter);
         mSearchView = (SearchView) mSearchMenuItem.getActionView();
         mSearchView.setMaxWidth(Integer.MAX_VALUE);
+
+        mAuctionsPresenter.onCreateOptionsMenu();
 
         mSearchMenuItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
@@ -125,27 +135,28 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
 
     @Override
     public void setAuctionFragment(Boolean type) {
-            Bundle bundle = new Bundle();
-            bundle.putBoolean(AuctionListFragment.KEY_TYPE, type);
-            mAuctionsFragment.setArguments(bundle);
+        if (mAuctionsFragment == null){
+            mAuctionsFragment = AuctionListFragment.newInstance(type);
             getSupportFragmentManager().beginTransaction()
                     .setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out)
-                    .add(R.id.auctions_frame_lay, mAuctionsFragment).commit();
-            if (!type){
-                LayoutInflater layoutInflater = LayoutInflater.from(this);
-                mConstraintLayout = (ConstraintLayout) layoutInflater.inflate(R.layout.load_btn, null, false);
-                FrameLayout frameLayout = (FrameLayout) findViewById(R.id.auctions_frame_lay_load_more_btn);
-                frameLayout.addView(mConstraintLayout);
-                mLoadNewDataButton = (Button) mConstraintLayout.findViewById(R.id.auctions_load_btn);
-                mLoadNewDataButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mAuctionsPresenter.onLoadNewDataBtnClick();
-                    }
-                });
-                Log.v(WowhqApplication.LOG_TAG, "[LOAD NEW AUCS BTN] add constraintLayout");
-            }
+                    .add(R.id.auctions_frame_lay, mAuctionsFragment, AUC_FRAGMENT_TAG).commit();
+            Log.v(WowhqApplication.LOG_TAG, "AuctionsAndDealsActivity - add AucListFragment");
         }
+        if (!type){
+            LayoutInflater layoutInflater = LayoutInflater.from(this);
+            mConstraintLayout = (ConstraintLayout) layoutInflater.inflate(R.layout.load_btn, null, false);
+            FrameLayout frameLayout = (FrameLayout) findViewById(R.id.auctions_frame_lay_load_more_btn);
+            frameLayout.addView(mConstraintLayout);
+            mLoadNewDataButton = (Button) mConstraintLayout.findViewById(R.id.auctions_load_btn);
+            mLoadNewDataButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mAuctionsPresenter.onLoadNewDataBtnClick();
+                }
+            });
+            Log.v(WowhqApplication.LOG_TAG, "[LOAD NEW AUCS BTN] add constraintLayout");
+        }
+    }
 
     @Override
     public void setFilterFragment() {
@@ -153,17 +164,18 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
             mAuctionsFilterFragment = new AuctionsFilterFragment();
             Log.v(WowhqApplication.LOG_TAG, "[AuctionAndDealsActivity] - new AuctionsFilterFragment");
         }
-        getSupportFragmentManager().beginTransaction().
-                setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).
-                remove(mAuctionsFragment).
-                add(R.id.auctions_frame_lay, mAuctionsFilterFragment).
-                addToBackStack(null).commit();
+        if (getSupportFragmentManager().findFragmentById(R.id.auctions_frame_lay).getClass() != AuctionsFilterFragment.class){
+            getSupportFragmentManager().beginTransaction().
+                    setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).
+                    remove(mAuctionsFragment).
+                    add(R.id.auctions_frame_lay, mAuctionsFilterFragment, AUC_FILTER_FRAGMENT_TAG).
+                    addToBackStack(null).commitAllowingStateLoss();
+        }
     }
 
     @Override
     public void initAdapter(List<Lot> lotList) {
         mAuctionsFragment.initAdapter(lotList);
-
     }
 
 
@@ -274,7 +286,12 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mAuctionsPresenter.onDestroy();
+        if (isFinishing()){
+            Log.v(WowhqApplication.LOG_TAG, "[AuctionsAndDealsActivity] - onDestroy (Реально завершается)");
+            mAuctionsPresenter.onDestroy();
+        }else {
+            Log.v(WowhqApplication.LOG_TAG, "[AuctionsAndDealsActivity] - onDestroy (Вызвался при повороте)");
+        }
     }
 
     @Override
@@ -342,5 +359,10 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
     @Override
     public void onBackArrowClick() {
         mAuctionsPresenter.onBackPressed();
+    }
+
+    @Override //Сохраним Presenter при повороте:
+    public Object onRetainCustomNonConfigurationInstance() {
+        return mAuctionsPresenter;
     }
 }

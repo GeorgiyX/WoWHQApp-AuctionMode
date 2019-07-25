@@ -26,6 +26,7 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
     private Boolean mIsProgressBarInit;
     private Boolean mIsProgressBarVisible;
     private Boolean mIsFilterApply;
+    private Boolean mIsFilterNotDefault;
 
 
     private Integer mCurrentPage;
@@ -51,10 +52,6 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
 
 
 
-
-
-
-
     public AuctionsPresenter(MainContract.AuctionsView auctionsView, SettingRepository settingRepository){
         mCurrentPage = 1;
         mAuctionsView = auctionsView;
@@ -64,6 +61,7 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
         mIsAllAuctionsDownload = false;
         mIsProgressBarVisible=mIsProgressBarInit = false;
         mIsFilterApply = false;
+        mIsFilterNotDefault = false;
         mMode = Mode.NORMAL;
 
         mSearchString = new StringBuilder();
@@ -72,16 +70,48 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
 
         mLevelStart = mLevelEnd = mPriceStart = mPriceEnd = null;
         mOrderPosition = null;
+        mAuctionsRepo = null;
     }
 
+
+    /**
+     * 
+     *
+     * @param type тип - сделки/аукцион
+     * @param titles заголовки в appbar из ресурсов
+     * @param mNavMenuElements navdrawer элементы (устанавливаются в checked)
+     */
     @Override
     public void init(Boolean type, String[] titles, Integer[] mNavMenuElements) {
         mTypeOfActivity = type;
         mActivityTitles = titles;
-        mAuctionsView.setTitle(mTypeOfActivity ? mActivityTitles[0] : mActivityTitles[1] + " - " + mSettingRepository.getSlug());
-        mAuctionsView.setAuctionFragment(type);
         mAuctionsView.setCheckedMenuItem(type ? mNavMenuElements[0] : mNavMenuElements[1]);
-        mAuctionsRepo = new AuctionsRepo(mSettingRepository, mTypeOfActivity, this);
+        if (mAuctionsRepo == null){
+            mAuctionsRepo = new AuctionsRepo(mSettingRepository, mTypeOfActivity, this); //инициализация репо происходит в этом методе, т.к.
+        }
+        if (mMode == Mode.NORMAL){ // Normal = аук и выгодные лоты.
+            mAuctionsView.setTitle(mTypeOfActivity ? mActivityTitles[0] : mActivityTitles[1] + " - " + mSettingRepository.getSlug());
+            mAuctionsView.setAuctionFragment(type);
+            //Проверим, если разрешены сетевые запросы (нажали "обновить" или репо заметил что данных нет, докачал и разблокировал сетевые запросы (нужно ДОДЕЛАТЬ))
+            // - значит метод init() вызывается повторно. Будем добавялть progBar который исчесзает при повороте.
+            if (mIsNetQueryEnable){
+                mAuctionsView.addProgressBar();
+                mAuctionsView.hideProgressBar();
+                if (mIsProgressBarVisible){ //включим видимость progbar'a если положенно
+                    mAuctionsView.showProgressBar();
+                }
+            }
+        }
+        if (mMode == Mode.FILTER){
+            mAuctionsView.disableDrawer();
+            mAuctionsView.setTitle(mActivityTitles[2]);
+            mAuctionsView.showArrowBack();
+        }
+    }
+
+    @Override
+    public void setAuctionsView(MainContract.AuctionsView auctionsView) {
+        mAuctionsView = auctionsView;
     }
 
     //TODO по большей части этот код не актуален (можно дописать чтобы срабатывал он на  onKeyDown - KEYCODE_MENU, похоже для устройств вроде S3 с копкой меню )
@@ -107,12 +137,13 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
     }
 
     @Override
-    public void notifyLittleData() {
+    public void notifyLittleData() { //repo уведомляет presenter, мб стоит его
         if (!mIsRecyclerAdapterEnable || mAuctionsRepo.getLots().size() == 0) {
             mAuctionsRepo.deleteAllLots();
             mAuctionsRepo.downloadLots(1);
             if (mIsProgressBarVisible) {
                 mAuctionsView.hideProgressBar();
+                mIsProgressBarVisible = false;
             }
         }
     }
@@ -159,7 +190,7 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
         }
         if (!mIsProgressBarVisible){
             mAuctionsView.showProgressBar();
-            mIsProgressBarVisible =true;
+            mIsProgressBarVisible =true; //!!!
         }
     }
 
@@ -234,13 +265,27 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
             mAuctionsView.enableDrawer();
             mAuctionsView.showToolBarIcons();
             mAuctionsView.onBackPressedSuper();
-            mAuctionsView.initAdapter(mAuctionsRepo.getLots()); //Связано с lifecycle Fragment'a, т.к. инициазация адаптера вынесена из этих методов....
+//            mAuctionsView.initAdapter(mAuctionsRepo.getLots()); //Связано с lifecycle Fragment'a, т.к. инициазация адаптера вынесена из этих методов....
                                                                 //Т.к. при возврате с backstack перевызывается onCreateView, похоже стоит использовать какие-либо методы для сохранения состояния  [https://medium.com/@jacquesgiraudel/problem-with-restoring-fragments-from-the-backstack-945dc3f7f5a5]
             mAuctionsView.setTitle(mTypeOfActivity ? mActivityTitles[0] : mActivityTitles[1] + " - " + mSettingRepository.getSlug());
             mMode = Mode.NORMAL;
         }
         else {
             mAuctionsView.onBackPressedSuper();
+        }
+    }
+
+
+    /**
+     * Эта функция вызывается в одноменной функции Activity. Выполняет код связанный с отображением значков AppBar'a, (ранее он был в init,
+     * проблема - init() вызывается в onCreate() до инициализации AppBar'a (а вызвать init() позже onCreate() также приводит к трудностям (НУЖНО ИЗУЧИТЬ)
+     * ИЗУЧЕННО - фрагмент создается, но вызываются методы его ЖЦ, и соответственно, мы натыкаемся на NullPointer при попытке установить адаптер
+     * в RV)
+     */
+    @Override
+    public void onCreateOptionsMenu() {
+        if (mMode == Mode.FILTER){
+            mAuctionsView.hideToolBarIcons();
         }
     }
 
@@ -256,16 +301,19 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
 
     @Override
     public void onFilterApplyButtonClick() {
-            //TODO  загрузить данные с новыми фильтром, если надо  - переключить isNetQueryEnable, установить счетчик страниц = 1.
+        //TODO  загрузить данные с новыми фильтром, если надо  - переключить isNetQueryEnable, установить счетчик страниц = 1.
     }
 
     @Override
     public void initFilterFragment() {
         mAuctionsView.setFilterAdapterToExpandableListViewAndSetHeader(mAuctionsRepo.getGroupArrayList(), mAuctionsRepo.getChildrenArrayList(),mLevelStart, mLevelEnd, mPriceStart, mPriceEnd, mOrderPosition);
+//        mAuctionsView.setFilterResetButtonVisibility(mIsFilterNotDefault);
     }
 
     @Override
     public void onFilterChildCategoryClick(int groupPosition, int childPosition, boolean isChecked) {
+        mIsFilterNotDefault = true;
+        mAuctionsView.setFilterResetButtonVisibility(mIsFilterNotDefault);
         mAuctionsRepo.setExpandableChildrenCheckBox(groupPosition, childPosition, isChecked);
     }
 
@@ -317,15 +365,17 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
         mPriceStart = starPrice;
         mPriceEnd = endPrice;
         mOrderPosition = orderPosition;
+//        mAuctionsView.setFilterResetButtonVisibility(mIsFilterNotDefault);
     }
 
     @Override
     public void onFilterResetButtonClick() {
-        mIsFilterApply = false;
+        mIsFilterApply = mIsFilterNotDefault = false;
         mCurrentPage = 1;
         mAuctionsRepo.resetExpandableListElements();
         mLevelStart = mLevelEnd = mPriceStart = mPriceEnd = null;
         mOrderPosition = null;
         mAuctionsView.setFilterAdapterToExpandableListViewAndSetHeader(mAuctionsRepo.getGroupArrayList(), mAuctionsRepo.getChildrenArrayList(),mLevelStart, mLevelEnd, mPriceStart, mPriceEnd, mOrderPosition);
+        mAuctionsView.setFilterResetButtonVisibility(mIsFilterNotDefault);
     }
 }
