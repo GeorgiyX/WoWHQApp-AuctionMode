@@ -1,5 +1,6 @@
 package com.example.wowhqapp.fragments.auctions;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -261,6 +263,12 @@ public class AuctionsFilterFragment extends Fragment implements MainContract.Auc
     @Override
     public void showFilterInputErrorToast() {
         Toast.makeText(mContext, getResources().getString(R.string.filter_input_error), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void hideFilterKeyBoard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) mContext.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow( getView().getRootView().getWindowToken(), 0);
     }
 
     private void  sendInputViewData(){

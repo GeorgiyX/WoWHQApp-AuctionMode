@@ -145,6 +145,7 @@ public abstract class BaseDrawerActivityWithToolBar extends AppCompatActivity  i
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)){
             mDrawerLayout.closeDrawers();
         } else {
+
             super.onBackPressed();
         }
     }

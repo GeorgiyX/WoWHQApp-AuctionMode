@@ -1,5 +1,8 @@
 package com.example.wowhqapp.presenters;
 
+import android.util.Log;
+
+import com.example.wowhqapp.WowhqApplication;
 import com.example.wowhqapp.contracts.MainContract;
 import com.example.wowhqapp.repositories.AuctionsRepo;
 import com.example.wowhqapp.repositories.SettingRepository;
@@ -258,12 +261,15 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
 
     @Override
     public void onBackPressed() {
+        Log.v(WowhqApplication.LOG_TAG, "onBackPressed");
+
         if (mMode == Mode.SEARCH){
             mAuctionsView.collapseActionView();
             mMode = Mode.NORMAL;
         }else if(mMode == Mode.FILTER){
             mAuctionsView.enableDrawer();
             mAuctionsView.showToolBarIcons();
+            mAuctionsView.hideFilterKeyBoard();
             mAuctionsView.onBackPressedSuper();
 //            mAuctionsView.initAdapter(mAuctionsRepo.getLots()); //Связано с lifecycle Fragment'a, т.к. инициазация адаптера вынесена из этих методов....
                                                                 //Т.к. при возврате с backstack перевызывается onCreateView, похоже стоит использовать какие-либо методы для сохранения состояния  [https://medium.com/@jacquesgiraudel/problem-with-restoring-fragments-from-the-backstack-945dc3f7f5a5]

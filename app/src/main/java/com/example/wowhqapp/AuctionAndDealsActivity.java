@@ -277,7 +277,6 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
         return mAuctionsPresenter.onGetGlideUrl(icon_name);
     }
 
-
     @Override
     public void onListFragmentInteraction(Lot lot) {
         Log.v(WowhqApplication.LOG_TAG, "onListFragmentInteraction - это обработчик нажатия на элемент списка (Лот), AuctionAndDeals Activity");
@@ -322,6 +321,11 @@ public class AuctionAndDealsActivity extends BaseDrawerActivityWithToolBar imple
     @Override
     public void showFilterInputErrorToast() {
         mAuctionsFilterFragment.showFilterInputErrorToast();
+    }
+
+    @Override
+    public void hideFilterKeyBoard() {
+        mAuctionsFilterFragment.hideFilterKeyBoard();
     }
 
     @Override

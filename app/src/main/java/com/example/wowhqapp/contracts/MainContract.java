@@ -138,6 +138,7 @@ public interface MainContract {
         void setFilterAdapterToExpandableListViewAndSetHeader(ArrayList<Map<String, String>> groupArrayList, ArrayList<ArrayList<Map<String, String>>> childrenArrayList, String statLevel, String endLevel, String starPrice, String endPrice, Integer orderPosition);
         void setFilterResetButtonVisibility(boolean isVisible);
         void showFilterInputErrorToast();
+        void hideFilterKeyBoard();
     }
 
     interface AuctionsRepo{
