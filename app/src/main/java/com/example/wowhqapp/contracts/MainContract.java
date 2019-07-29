@@ -145,6 +145,7 @@ public interface MainContract {
         List<Lot> getLots();
         void clearListOfLots();
         void downloadLots(int page);
+        void downloadLots(int page, String statLevel, String endLevel, String starPrice, String endPrice, Integer orderPosition);
         void deleteAllLots();
         void destroy();
         ArrayList<ArrayList<Map<String, String>>> getChildrenArrayList();
@@ -183,7 +184,7 @@ public interface MainContract {
         long getMax();
         long getMin();
         long getCurrent();
-        long getlastChange();
+        long getLastChange();
         void destroy();
     }
     interface WoWTokenServicePresenter{

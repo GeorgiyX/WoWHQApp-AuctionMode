@@ -22,7 +22,7 @@ public class WoWTokenPresenter implements MainContract.WoWTokenPresenter {
     @Override
     public void initPrice() {
         mWoWTokenView.setPrice(mTokenRepository.getMin(), mTokenRepository.getMax(), mTokenRepository.getCurrent(),
-                mTokenRepository.getlastChange(), (mTokenRepository.getlastChange() > 0) ? 0 : 1);
+                mTokenRepository.getLastChange(), (mTokenRepository.getLastChange() > 0) ? 0 : 1);
     }
 
     @Override

@@ -1,8 +1,5 @@
 package com.example.wowhqapp.presenters;
 
-import android.util.Log;
-
-import com.example.wowhqapp.WowhqApplication;
 import com.example.wowhqapp.contracts.MainContract;
 import com.example.wowhqapp.repositories.AuctionsRepo;
 import com.example.wowhqapp.repositories.SettingRepository;
@@ -143,7 +140,7 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
     public void notifyLittleData() { //repo уведомляет presenter, мб стоит его
         if (!mIsRecyclerAdapterEnable || mAuctionsRepo.getLots().size() == 0) {
             mAuctionsRepo.deleteAllLots();
-            mAuctionsRepo.downloadLots(1);
+            mAuctionsRepo.downloadLots(1); // аргументы
             if (mIsProgressBarVisible) {
                 mAuctionsView.hideProgressBar();
                 mIsProgressBarVisible = false;
@@ -261,8 +258,6 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
 
     @Override
     public void onBackPressed() {
-        Log.v(WowhqApplication.LOG_TAG, "onBackPressed");
-
         if (mMode == Mode.SEARCH){
             mAuctionsView.collapseActionView();
             mMode = Mode.NORMAL;
@@ -299,15 +294,15 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
     public void onFilterClick() {
         mAuctionsView.disableDrawer();
         mAuctionsView.hideToolBarIcons();
+        mAuctionsView.hideLoadNewDataBtn();
+//        if(mIsProgressBarVisible){
+//            mAuctionsView.hideProgressBar();
+//            mIsProgressBarVisible = false;
+//        }
         mAuctionsView.setTitle(mActivityTitles[2]);
         mAuctionsView.showArrowBack();
         mAuctionsView.setFilterFragment();
         mMode = Mode.FILTER;
-    }
-
-    @Override
-    public void onFilterApplyButtonClick() {
-        //TODO  загрузить данные с новыми фильтром, если надо  - переключить isNetQueryEnable, установить счетчик страниц = 1.
     }
 
     @Override
@@ -371,7 +366,9 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
         mPriceStart = starPrice;
         mPriceEnd = endPrice;
         mOrderPosition = orderPosition;
-//        mAuctionsView.setFilterResetButtonVisibility(mIsFilterNotDefault);
+
+        mIsFilterNotDefault = true;
+        mAuctionsView.setFilterResetButtonVisibility(mIsFilterNotDefault);
     }
 
     @Override
@@ -383,5 +380,13 @@ public class AuctionsPresenter implements MainContract.AuctionsPresenter {
         mOrderPosition = null;
         mAuctionsView.setFilterAdapterToExpandableListViewAndSetHeader(mAuctionsRepo.getGroupArrayList(), mAuctionsRepo.getChildrenArrayList(),mLevelStart, mLevelEnd, mPriceStart, mPriceEnd, mOrderPosition);
         mAuctionsView.setFilterResetButtonVisibility(mIsFilterNotDefault);
+    }
+
+    @Override
+    public void onFilterApplyButtonClick() {
+        mCurrentPage = 1;
+        mAuctionsRepo.deleteAllLots();
+
+        //TODO  загрузить данные с новыми фильтром, если надо  - переключить isNetQueryEnable, установить счетчик страниц = 1.
     }
 }

@@ -75,7 +75,7 @@ public class WoWTokenRepo implements MainContract.TokenRepository {
     }
 
     @Override
-    public long getlastChange() {
+    public long getLastChange() {
         return mWoWToken.getLastChange();
     }
 

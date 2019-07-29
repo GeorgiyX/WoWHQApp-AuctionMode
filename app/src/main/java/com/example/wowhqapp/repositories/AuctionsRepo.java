@@ -149,6 +149,18 @@ public class AuctionsRepo implements MainContract.AuctionsRepo {
         });
     }
 
+    /**
+     * Загрузка лотов с ключами фильтра. Также прямо из репозитория берутся категории (также в ключ).*/
+    @Override
+    public void downloadLots(int page, String statLevel, String endLevel, String starPrice, String endPrice, Integer orderPosition) {
+        Completable.fromAction(new Action() {
+            @Override
+            public void run() throws Exception {
+
+            }
+        }).observeOn()
+    }
+
     @Override
     public void deleteAllLots() {
         Completable.fromAction(new Action() {

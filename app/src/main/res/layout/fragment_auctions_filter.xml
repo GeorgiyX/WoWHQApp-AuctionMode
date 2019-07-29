@@ -23,6 +23,7 @@
     <Button
         android:id="@+id/filter_btn_reset"
         android:text="@string/filter_btn_reset"
+        android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
